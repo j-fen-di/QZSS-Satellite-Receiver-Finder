@@ -35,8 +35,10 @@ for i in range(0, len(QZSS_ECEF)):
     # add to QZSS_ECEF array for future usage
     QZSS_ECEF[i][:] = r_ECEF[:]
     # print results
-    res2a = f"r of the QZS-{i} satellite is <{r_ECEF[0]:.3f}, {r_ECEF[1]:.3f}, {r_ECEF[2]:.3f}> km.\n"
+    res2a = f"r of the QZS-{i} satellite is <{r_ECEF[0]:.3f}, {r_ECEF[1]:.3f}, {r_ECEF[2]:.3f}> km."
     print(res2a)
+    if i == len(QZSS_ECEF) - 1:
+        print('\n')
 
 # PROBLEM 2B
 # print '2b)'
@@ -47,5 +49,5 @@ t_u = 0; # in seconds (1 day)
 for i in range(0, len(QZSS_ECEF)):
     rho_hat = np.sqrt((QZSS_ECEF[i][0])**2 + (QZSS_ECEF[i][1])**2 + (QZSS_ECEF[i][2])**2) + c*t_u
     # print results
-    res2b = f"pseudorange of the QZS-{i} satellite is {rho_hat:.3f} km.\n"
+    res2b = f"pseudorange of the QZS-{i} satellite is {rho_hat:.3f} km."
     print(res2b)
