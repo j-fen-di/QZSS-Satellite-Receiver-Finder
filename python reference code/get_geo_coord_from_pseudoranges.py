@@ -4,8 +4,6 @@ import numpy as np
 # jfendi's MATLAB code for AE 4361, Homework 5, Question 3 - Spring 2022
 # Justin Effendi, Dr. Lightsey, AE 4361, February 24, 2022
 
-# format long (Do something about this lol)
-
 # FUNCTIONS
 def trilaterate_to_loc(r_user, r_sats, pseudo_exp, pseudo_act):
     # initial values needed
@@ -95,7 +93,8 @@ guess_0 = np.zeros([1, 4])
 receiver_pos = trilaterate_to_loc(guess_0, r_QZSS, rhos_exp, rhos_act)
 # print results
 print("3)")
-res3_1 = f"The location of the receiver in ECEF coordinates are <{receiver_pos[0][0]:.4f}, {receiver_pos[0][1]:.4f}, {receiver_pos[0][2]:.4f}> km."
+res3_1 = f"The location of the receiver in ECEF coordinates are <{receiver_pos[0][0]:.4f}, {receiver_pos[0][1]:.4f}, \
+        {receiver_pos[0][2]:.4f}> km."
 res3_2 = f"The receiver clock offset is {receiver_pos[0][3]:.10f} seconds.\n\n"
 print(res3_1)
 print(res3_2)

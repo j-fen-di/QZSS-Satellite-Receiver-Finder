@@ -1,0 +1,23 @@
+Intro:
+
+GUI LAYOUT (roughly)
+----------------------------
+|    3D EARTH     |        |
+|       o o       | INPUT  |
+|    o       o    |        |
+|   o         o   |---------
+|    o       o    | RESULTS|
+|       o o       |        |
+----------------------------
+
+App Pseudocode/Logic:
+
+1) Enter latitude, longitude, and altitude of the four QZSS satellites (INPUT)
+2) Enter actual pseudoranges measurements of four satellites (INPUT)
+2) Calculate ECEF position of each satellite
+   - store positions for next step
+3) Calculate satellite pseudoranges
+4) Calculate location in ECEF coordinates
+5) Find cartesian latitude, longitude of location
+6) (BONUS): Connect with some API and state what that location is
+7) (BONUS): Put dot on 3D earth and show where that location is on Earth's surface
