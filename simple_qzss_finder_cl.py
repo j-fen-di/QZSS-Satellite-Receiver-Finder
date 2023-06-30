@@ -83,8 +83,9 @@ receiver_pos = func.trilaterate_to_loc(guess_0, QZSS_ECEF, rhos_exp, rhos_act)
 [lat, lon, h] = func.findLatLonH(receiver_pos[0][0], receiver_pos[0][1], receiver_pos[0][2])
 receiver_loc = [lat, lon, h]
 
-# print results, gives coordinates of Takesaki Observation Stand in Japan
-print("\n\n\nRESULTS:")
-print(f"The latitude of the receiver is {receiver_loc[0]:.8g} degrees.")
-print(f"The longitude of the receiver is {receiver_loc[1]:.9g} degrees.")
-print(f"The altitude of the receiver is {receiver_loc[2]:.9g} km.")
+# use Geolocator API to display physical location of triangulated receiver
+geolocator = Nominatim(user_agent="simple_qzss_finder_cl.py")
+location = geolocator.reverse(f"{lat:.9g}, {lon:.9g}")
+print("\n\nRECEIVER LOCATION:")
+print(location.address)
+print(f"Geospatial coordinates (lat, lon): ({location.latitude}, {location.longitude})")
